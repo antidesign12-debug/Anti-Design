@@ -103,6 +103,50 @@
     .status-pill::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #c9bcfb; }
     .footer-note { margin: 30px 0 0; color: #5c5480; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
     .footer-note strong { color: rgba(154, 124, 249, .8); font-weight: 500; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--text); border: 1px solid rgba(154, 124, 249, .34); background: rgba(124, 92, 252, .1); transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+    .btn:hover { transform: translateY(-2px); background: rgba(124, 92, 252, .2); box-shadow: 0 10px 24px rgba(124, 92, 252, .18); }
+    .btn:focus-visible, .about-link:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+    .btn-primary { border-color: transparent; background: linear-gradient(135deg, var(--violet), #5a35d6); box-shadow: 0 10px 28px rgba(123, 83, 251, .35); }
+    .btn-primary:hover { background: linear-gradient(135deg, #8a63ff, #6540e6); }
+    .about-link { display: inline-block; margin-top: 22px; color: var(--violet-soft); font: 500 11px/1 var(--mono); letter-spacing: .14em; text-decoration: none; }
+    .about-link:hover { color: var(--lav); }
+    .about { width: min(1110px, 100%); margin: 0 auto; padding: clamp(40px, 8vw, 90px) clamp(16px, 4vw, 48px) 60px; scroll-margin-top: 20px; }
+    .about h2 { margin: 0 0 18px; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1; letter-spacing: -.05em; font-weight: 700; }
+    .about-lead { max-width: 640px; margin: 0; color: var(--muted); font-size: clamp(14px, 1.5vw, 16px); line-height: 1.75; }
+    .about-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
+    .about-card, .member { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); backdrop-filter: blur(14px); }
+    .about-card h3 { margin: 0 0 8px; font-size: 15px; font-weight: 600; }
+    .about-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+    .member { display: flex; align-items: center; gap: 16px; }
+    .avatar { width: 52px; height: 52px; flex: 0 0 52px; display: grid; place-items: center; border-radius: 15px; color: var(--lav); font-weight: 700; font-size: 18px; background: linear-gradient(150deg, rgba(123, 83, 251, .4), rgba(43, 18, 114, .45)); }
+    .member-name { font-size: 16px; font-weight: 600; }
+    .member-role { margin-top: 4px; color: var(--muted); font: 500 10px/1.4 var(--mono); letter-spacing: .1em; }
+    @media (max-width: 820px) { .about-grid { grid-template-columns: minmax(0, 1fr); } .team { grid-template-columns: minmax(0, 1fr); } }
+    @media (max-width: 480px) { .btn { width: 100%; justify-content: center; } }
+    html { scroll-behavior: smooth; }
+    .member { position: relative; overflow: hidden; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .member::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--violet-soft), var(--violet-deep)); }
+    .member:hover { transform: translateY(-3px); border-color: rgba(124, 92, 252, .6); box-shadow: 0 14px 34px rgba(124, 92, 252, .15); }
+    .avatar { width: 58px; height: 58px; flex-basis: 58px; font-size: 20px; border: 1px solid rgba(163, 130, 250, .35); box-shadow: 0 8px 22px rgba(123, 83, 251, .3), inset 0 1px 0 rgba(255,255,255,.08); }
+    .member-name { font-size: 18px; letter-spacing: -.01em; }
+    .member-title { margin-top: 5px; color: var(--lav); font-size: 13px; font-weight: 500; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; color: #e4dbff; border: 1px solid rgba(154, 124, 249, .4); border-radius: 999px; background: rgba(124, 92, 252, .16); font: 600 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .chip::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--violet-soft); box-shadow: 0 0 8px var(--violet-soft); }
+    .btn { min-height: 60px; padding: 0 24px 0 20px; border-radius: 16px; gap: 14px; text-align: left; }
+    .btn-text { display: flex; flex-direction: column; gap: 4px; }
+    .btn-text strong { font-size: 14px; font-weight: 600; line-height: 1; }
+    .btn-text small { font: 500 10px/1 var(--mono); letter-spacing: .06em; opacity: .75; }
+    .btn svg { flex: 0 0 auto; padding: 9px; box-sizing: content-box; border-radius: 11px; background: rgba(255,255,255,.12); }
+    @media (max-width: 480px) { .btn { justify-content: flex-start; } }
+    @media (min-width: 821px) and (max-width: 1100px) {
+      .shell { gap: 36px; }
+      h1 { font-size: clamp(3rem, 6.2vw, 4.6rem); }
+      .about-grid { gap: 10px; }
+    }
+    @media (min-width: 1800px) { .shell, .about { zoom: 1.12; } }
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%, 100% { opacity: .7; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.1); } }
     @media (max-width: 820px) {
@@ -137,6 +181,11 @@
         <div class="kicker">AI-Powered 3D Design / CAD</div>
         <h1 id="ad-title">Concept in.<br><em>Creation</em> out.</h1>
         <p class="subtitle">Anti Desgin turns ideas into production-ready 3D models and CAD assets with AI-assisted design workflows — fast, precise, and built for real manufacturing.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/1u71vyMUJmOA8-G--1rQG93toHUgCtlgW/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 20h16"/></svg><span class="btn-text"><strong>Download for Desktop</strong></span></a>
+          <a class="btn" href="https://wa.me/201113248700?text=Hi%2C%20I%E2%80%99d%20like%20to%20download%20Anti%20Desgin%20for%20Desktop." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.83 11.83 0 0 0 12.08 0C5.53 0 .2 5.32.2 11.88c0 2.09.55 4.13 1.59 5.93L.1 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.17-3.47-8.4Zm-8.42 18.2h-.01a9.83 9.83 0 0 1-5.02-1.37l-.36-.21-3.76.99 1-3.66-.23-.38a9.82 9.82 0 0 1-1.51-5.19C2.19 6.45 6.62 2 12.08 2c2.65 0 5.14 1.04 7.02 2.92A9.86 9.86 0 0 1 22 11.9c0 5.46-4.44 9.8-9.92 9.8Z"/></svg><span class="btn-text"><strong>Download via WhatsApp</strong></span></a>
+        </div>
+        <a class="about-link" href="#about">ABOUT US ↓</a>
       </section>
       <section class="signal" aria-labelledby="connect-title">
         <div class="card">
@@ -154,8 +203,8 @@
             <a class="link" href="https://www.instagram.com/antidesign1" target="_blank" rel="noopener noreferrer" aria-label="Visit Anti Desgin on Instagram">
               <span class="link-leading"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><span class="copy"><span class="name">Instagram</span></span></span><span class="arrow" aria-hidden="true">↗</span>
             </a>
-            <a class="link" href="https://wa.me/201006013899" target="_blank" rel="noopener noreferrer" aria-label="Contact Anti Desgin on WhatsApp">
-              <span class="link-leading"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.5 3.5A11.83 11.83 0 0 0 12.08 0C5.53 0 .2 5.32.2 11.88c0 2.09.55 4.13 1.59 5.93L.1 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.17-3.47-8.4Zm-8.42 18.2h-.01a9.83 9.83 0 0 1-5.02-1.37l-.36-.21-3.76.99 1-3.66-.23-.38a9.82 9.82 0 0 1-1.51-5.19C2.19 6.45 6.62 2 12.08 2c2.65 0 5.14 1.04 7.02 2.92A9.86 9.86 0 0 1 22 11.9c0 5.46-4.44 9.8-9.92 9.8Zm5.42-7.35c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.09 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="copy"><span class="name">Phone & WhatsApp</span></span></span><span class="arrow" aria-hidden="true">↗</span>
+            <a class="link" href="https://wa.me/201113248700" target="_blank" rel="noopener noreferrer" aria-label="Contact Anti Desgin on WhatsApp">
+              <span class="link-leading"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.5 3.5A11.83 11.83 0 0 0 12.08 0C5.53 0 .2 5.32.2 11.88c0 2.09.55 4.13 1.59 5.93L.1 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.18-1.24-6.17-3.47-8.4Zm-8.42 18.2h-.01a9.83 9.83 0 0 1-5.02-1.37l-.36-.21-3.76.99 1-3.66-.23-.38a9.82 9.82 0 0 1-1.51-5.19C2.19 6.45 6.62 2 12.08 2c2.65 0 5.14 1.04 7.02 2.92A9.86 9.86 0 0 1 22 11.9c0 5.46-4.44 9.8-9.92 9.8Zm5.42-7.35c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.09 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></span><span class="copy"><span class="name">Phone &amp; WhatsApp</span></span></span><span class="arrow" aria-hidden="true">↗</span>
             </a>
             <a class="link" href="mailto:antidesign12@gmail.com" aria-label="Email Anti Desgin">
               <span class="link-leading"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.2.2 7.3 5.7a.8.8 0 0 0 1 0l7.3-5.7H4.2zM20 7.9l-7.06 5.5a2.8 2.8 0 0 1-3.42 0L2.46 7.9V18.5c0 .28.22.5.5.5h18.08a.5.5 0 0 0 .5-.5V7.9z"/></svg></span><span class="copy"><span class="name">Email</span></span></span><span class="arrow" aria-hidden="true">↗</span>
@@ -167,5 +216,19 @@
       </section>
     </div>
   </main>
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="kicker">About us</div>
+    <h2 id="about-title">Who we are</h2>
+    <p class="about-lead">Anti Desgin is an AI-powered 3D design and CAD studio. We turn ideas into production-ready 3D models and CAD assets, using AI-assisted workflows that stay fast, precise, and ready for real manufacturing. The Desktop version is available to download at the top of this page.</p>
+    <div class="about-grid">
+      <div class="about-card"><h3>From idea to model</h3><p>Describe the concept, and we help shape it into a clean, usable 3D model.</p></div>
+      <div class="about-card"><h3>AI-assisted workflow</h3><p>AI handles the repetitive steps so the design process moves faster.</p></div>
+      <div class="about-card"><h3>Built for production</h3><p>Models and CAD assets are prepared with real manufacturing in mind.</p></div>
+    </div>
+    <div class="team">
+      <div class="member"><span class="avatar" aria-hidden="true">N</span><div><div class="member-name">Nasr Mohamed</div><div class="member-title">CEO &amp; Founder</div><div class="chips"><span class="chip">Lead 3D</span></div></div></div>
+      <div class="member"><span class="avatar" aria-hidden="true">Y</span><div><div class="member-name">Yassin Ahmed</div><div class="member-title">COO &amp; Founder</div><div class="chips"><span class="chip">Lead 2D</span></div></div></div>
+    </div>
+  </section>
 </body>
 </html>
